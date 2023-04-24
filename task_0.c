@@ -19,17 +19,24 @@ int _printf(const char *format, ...)
 			{
 				c = (char) va_arg(arguments, int);
 				write(1, &c, 1);
-				total++
+				total++;
 			}
 			else if (*format == 's')
 			{
-				*str = va_arg(arguments, char *);
+				str = va_arg(arguments, char *);
+				str = (char *) malloc(strlen(str) + 1);
+				if (str == NULL)
+				{
+					return (-1);
+				}
+				strcpy(str, va_arg(arguments, char *));
 				while (*str != '\0')
 				{
 					write(1, str, 1);
 					str++;
 					total++;
 				}
+				free(str);
 			}
 			else if (*format == '%')
 			{
