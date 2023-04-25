@@ -57,7 +57,8 @@ typedef struct specifier
 	char *specifier;
 	int (*f)(va_list, params_t *);
 } specifier_t;
-
+/* _printf.c module */
+int _printf(const char *format, ...);
 /* printf_put.c module */
 int _puts(char *str);
 int _putchar(int c);
@@ -105,7 +106,5 @@ void parameters_init(params_t *params, va_list ap);
 /* printf_string_fields.c module */
 char *my_get_precision(char *p, params_t *params, va_list ap);
 
-/* _printf.c module */
-int _printf(const char *format, ...);
 
 #endif
