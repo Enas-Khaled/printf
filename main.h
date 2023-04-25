@@ -55,7 +55,7 @@ typedef struct parameters
 typedef struct specifier
 {
 	char *specifier;
-	int (*f)(va_list, paramters *);
+	int (*f)(va_list, params_t *);
 } specifier_t;
 
 /* printf_put.c module */
@@ -63,8 +63,8 @@ int _puts(char *str);
 int _putchar(int c);
 
 /*  print_function.c module */
-int my_print_char(va_list my_ap, my_params_t *my_params);
-int my_print_int(va_list my_ap, my_params_t *my_params);
+int my_print_char(va_list my_ap, params_t *my_params);
+int my_print_int(va_list my_ap, params_t *my_params);
 int print_custom_string(va_list arg_ptr, params_t *params);
 int print_percent_new(va_list arg_ptr, params_t *params_struct);
 int print_custom_S(va_list arg_ptr, params_t *params_struct);
@@ -73,7 +73,7 @@ int print_custom_S(va_list arg_ptr, params_t *params_struct);
 char *convert_number(long int num, int base, int conversion_flags
 	, params_t *params);
 int print_my_unsigned(va_list ap, params_t *params);
-int my_print_address(va_list my_ap, my_params_t *my_params);
+int my_print_address(va_list my_ap, params_t *my_params);
 
 /* printf_specifer.c module */
 int (*my_get_specifier(char *s)) (va_list ap, params_t *params);
