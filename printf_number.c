@@ -69,7 +69,7 @@ params), params));
  *
  * Return: number of bytes printed
  */
-int my_print_address(va_list my_ap, my_params_t *my_params)
+int my_print_address(va_list my_ap, params_t *my_params)
 {
 	unsigned long int my_ulong = va_arg(my_ap, unsigned long int);
 	char *my_str;

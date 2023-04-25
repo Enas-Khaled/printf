@@ -9,14 +9,14 @@
  * Return: number of characters printed
  */
 
-int my_print_char(va_list my_ap, my_params_t *my_params)
+int my_print_char(va_list my_ap, params_t *my_params)
 {
 	char my_pad_char = ' ';
 	unsigned int my_pad = 1, my_sum = 0, my_ch = va_arg(my_ap, int);
 
 	if (my_params->minus_flag)
 		my_sum += _putchar(my_ch);
-	while (my_pad++ < my_params->my_width)
+	while (my_pad++ < my_params->width)
 		my_sum += _putchar(my_pad_char);
 	if (!my_params->minus_flag)
 		my_sum += _putchar(my_ch);
@@ -31,13 +31,13 @@ int my_print_char(va_list my_ap, my_params_t *my_params)
  *
  * Return: number of characters printed
  */
-int my_print_int(va_list my_ap, my_params_t *my_params)
+int my_print_int(va_list my_ap, params_t *my_params)
 {
 	long my_l;
 
-	if (my_params->my_l_modifier)
+	if (my_params->l_modifier)
 		my_l = va_arg(my_ap, long);
-	else if (my_params->my_h_modifier)
+	else if (my_params->h_modifier)
 		my_l = (short int)va_arg(my_ap, int);
 	else
 		my_l = (int)va_arg(my_ap, int);
